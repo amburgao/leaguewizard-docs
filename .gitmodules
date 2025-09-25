@@ -1,0 +1,3 @@
+[submodule "leaguewizard"]
+	path = leaguewizard
+	url = https://github.com/amburgao/leaguewizard.git

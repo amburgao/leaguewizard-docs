@@ -1,0 +1,59 @@
+site_name: LeagueWizard Docs
+site_url: https://amburgao.github.io/leaguewizard-docs
+repo_name: amburgao/leaguewizard
+repo_url: https://github.com/amburgao/leaguewizard-docs
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme)"
+      primary: black
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: black
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  features:
+    - search.suggest
+    - navigation.top
+    - header.autohide
+    - navigation.expand
+    - navigation.sections
+    - toc.integrate
+plugins:
+  - search
+  - gen-files:
+      scripts:
+        - scripts/gen_ref_pages.py
+  - literate-nav:
+      nav_file: SUMMARY.md
+  - section-index
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_root_toc_entry: false
+
+nav:
+  - Index: index.md
+  - Code Reference: reference/
+
+copyright: Copyright &copy; 2025 Hamburgão
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      default_lang: python
+      use_pygments: true
+      pygments_lang_class: true
+extra_css:
+  - css/code_select.css
